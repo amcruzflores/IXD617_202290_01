@@ -1,11 +1,9 @@
 # IXD617_202290_01
 IXD 617 Advanced Tech: Mobile Web
 
-## Hamilton Cline
+## Annamarie Flores
 
 ### Important Links
-- https://hdraws.com/aau/IXD617
-- https://github.com/bronkula/IXD617_202290_01
+- https://www.annamarieflores.com/aau/ixd617
+- https://github.com/amcruzflores/IXD617_202290_01
 
-### Assignment Links
-- https://hdraws.com/aau/IXD617/profile/
