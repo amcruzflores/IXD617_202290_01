@@ -1,0 +1,214 @@
+html, body {
+	margin: 0 auto;
+	width: 100%;
+	height: 100%; /* Will take up all the entire room in the page, just incase the broswer isnt Chrome.*/
+}
+
+body {
+	background-image: url('../images/backgroundImage.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100%; 	/* means the body tag is always going to take up the whole entire page and height. the height of the entire page , so it doesnt push anything down*/	
+	display:  flex;		/*body is now flexbox container*/
+	flex-direction: column;
+	align-items: stretch;
+}
+
+h1 {
+	font-size: 60px;
+	font-family: 'Noto Sans SC', sans-serif;
+	color: #3652a3;
+}
+
+main {
+
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+
+}
+
+main p {
+	font-size: 14px;
+font-family: 'Noto Sans SC', sans-serif;
+	width: 50%;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+main, header, footer {
+
+	flex-shrink: 0;
+
+}
+
+
+/*Aligns Navigation with flex Box. Also targets the link <a>*/
+nav {
+	font-size: 15px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end; /* pushed all the way to the edge end */
+	margin-right: 350px;
+
+}
+
+nav a {
+	font-family: 'Noto Sans SC', sans-serif;
+	color: #3652a3;
+	padding: 10px;
+}
+
+nav a:hover {
+	background-color: #3652a3;
+	color: white;
+	transition: all 0.9s;
+	
+
+}
+
+a {
+	font-family: 'Noto Sans SC', sans-serif;
+	color: #3652a3;
+	padding: 10px;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #3652a3;
+	color: white;
+	transition: all 0.9s;
+
+}
+
+
+/*custom CSS for the artist page*/
+
+.artist_image {
+
+	float: right;
+	margin-left: 30px;
+	
+}
+
+.pBG{
+
+	background-color: white;
+	position: center;
+	padding: 20px;
+}
+.pBG1{
+
+	background-color: #F5F4F0;
+	position: center;
+	padding: 20px;
+	width: 613px;
+
+}
+
+
+.gallery{
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;   /* wrapping on grid */
+
+
+} 
+
+.gallery-item{
+	flex:0 0 25%;
+	
+}
+
+.gallery img{
+	 width:  100%;
+	 height: 100%;
+	 object-fit: cover;
+	 object-position: center;
+}
+
+.lightboxlink{
+	font-size: 15px;
+	border: solid 1px #3652a3;
+	text-decoration: none;
+	
+
+}
+
+.zoomimagelink{
+	font-weight: bold;
+	font-size: 15px;
+	border: solid 1px #3652a3;
+	text-decoration: none;
+}
+
+.simple{
+	cursor: pointer;
+}
+
+
+dt{
+	background-color: #F5F4F0;
+	padding: 10px;
+	color: white;
+	font-family: 'Noto Sans SC', sans-serif;
+	font-weight: bold;
+	justify-content: center;
+
+}
+
+dt~dt{
+	margin-top: 6px;
+}
+
+dd{
+	display: none;
+	text-align: center;
+	font-family: 'Noto Sans SC', sans-serif;
+	justify-content: center;
+	padding: 25px;
+	border: 1px solid #F5F4F0;
+	margin: 0px;
+	background-color: white;
+}
+
+
+dl, dt, dd {
+	color: #3652a3;
+	margin: 0 auto;
+	width: 72.6%;
+	box-sizing: border-box;
+	
+
+}
+
+h1{
+	text-align: center;
+}
+h2{
+	text-align: center;
+	font-family: 'Noto Sans SC', sans-serif;
+	color: #3652a3;
+}
+
+.fontposition{
+text-align: center;
+cursor: pointer;
+
+}
+
+p{
+	color: black;
+	font-size: 14px;
+	font-family: 'Noto Sans SC', sans-serif;
+}

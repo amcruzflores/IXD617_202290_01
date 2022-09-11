@@ -1,12 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+	
+	<title>ANNAMARIE - PROFILE</title>
+	
+<link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" type="text/css" href="styles/carousel.css">
+
 </head>
 <body>
-    <h1>Hamilton Cline</h1>
+
+	<header> <!-- Header Tag contains navigation (<nav> a collection of navigation items), a logo, the header of the document -->
+
+		<nav>
+			
+			<a href="index.html">Home</a>
+			<a href="gallery.html">Gallery</a>
+			<a href="artist.html">About</a>
+
+		</nav>
+
+		<main><!-- Main Tag is the main content of your site. Sometimes can be seen as a <div>, so it makes sense to have the main content here. The Main contains the Title, an Image and paragraph text -->
+			
+			<h1>Annamarie Flores | UX / UI Designer</h1>
+
+			<div>
+			
+		<div class="carousel">
+			<div class="slides">
+				<div class="slide center" style="background:url(images/Placeholder01.png) center; background-size: cover;"> </div> <!-- slide that will show first-->
+				<div class="slide" style="background:url(images/Placeholder02.png) center; background-size: cover;"> </div>
+				<div class="slide" style="background:url(images/Placeholder03.png) center; background-size: cover;"></div>
+				<div class="slide" style="background:url(images/Placeholder04.png) center; background-size: cover;"></div>
+				<div class="slide" style="background:url(images/Placeholder05.png) center; background-size: cover;"></div>
+				<div class="slide" style="background:url(images/Placeholder06.png) center; background-size: cover;"></div>
+				<div class="slide" style="background:url(images/Placeholder07.png) center; background-size: cover;"></div>
+				<div class="slide" style="background:url(images/Placeholder08.png) center; background-size: cover;"></div>
+				<div class="slide" style="background:url(images/Placeholder09.png) center; background-size: cover;"></div>
+			</div>
+			
+
+			<div class="controls">
+				<div class="control-left">&lt</div>
+				<div class="control-right">&gt</div>
+				<div class="control-pagination">
+					<div class="control-dot">&bullet;</div>
+					<div class="control-dot">&bullet;</div>
+					<div class="control-dot">&bullet;</div>
+				</div>
+				
+			</div>
+
+		</div>
+
+	</div>
+	<br>
+	<!--<a class="lightboxlink" href="zoomimagepage.html">ZOOM IN ART DETAILS</a> -->
+
+			<p class="pBG1"> 
+			Gallery<br>
+			Placeholder Text (00000) (Placeholder Text), 2013 . Date created 2013<br>
+			Classification : Type of media<br>
+			Medium: Medium Description<br>
+			Dimensions :00 in. x 00 in. x 00 in. (00.00 cm x 00.00 cm x 00.00 cm)<br>
+			
+			
+
+		</p>
+
+
+		</main>
+
+
+		<footer> <p>Design By: &copy; Annamarie Flores 2022</p></footer>
+		
+	</header>
+<script type="text/javascript" src="lib/js/jquery-3.6.0.min.js"></script> 
+<script type="text/javascript" src="scripts/carousel.js"></script>
+
+	<script type="text/javascript">
+		new Carousel({
+			element:$(".carousel").eq(0),
+			timing:2500
+		});
+
+	</script>
 </body>
 </html>

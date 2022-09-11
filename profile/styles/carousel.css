@@ -1,0 +1,125 @@
+/* Fix entire height of carousel */
+.carousel {
+	height: 470px;
+	width: 650px;
+	margin-top: -15px;
+	min-height: 13em;
+	position: relative;
+	overflow: hidden; /*any content thats inside carousel, if it goes outside of that carousel element .. hide it*/
+
+	}
+
+	.carousel .slide,
+	.carousel .slides{
+		height: 100%;
+		width: 100%;
+	}
+
+	.carousel .slides {  
+		position: relative;
+	}
+
+	.carousel .slide {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		background-color: white;
+		z-index: 1;
+		opacity: 0; /*setting up for javascript to run appropiately, at some were going to be changing that in javascript*/
+	}
+
+	.carousel .slide.moving{
+		transition: all 0.3s;
+	}
+
+	.carousel .slide.left,
+	.carousel .slide.right,
+	.carousel .slide.center{
+		opacity: 1;
+	}
+
+	.carousel .slide.center{
+		transform: translateX(0);
+
+	}
+
+	.carousel .slide.left{
+		transform: translate(-100%);
+
+	}
+
+	.carousel .slide.right{
+		transform: translateX(100%);
+	}
+
+	/*CONTROLS, build controls class in div and the divs inside it*/
+
+.carousel .controls{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none; /*the controls div and making it so its the same size. set to none mean when you click on that control area nothing is going to happen. its forcing the control to be given to the Click to be given to the control*/
+	user-select: none;
+	z-index: 5; /*want controls to lay on top of the slide*/
+	
+	}
+
+	.carousel [class*='control-']{ /*captures everything and find anything inside the carousel div that says DASH*/	
+		pointer-events: initial;
+
+	}
+
+.carousel .control-left,
+.carousel .control-right{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 5px;
+	font-size: 3em;
+	color: #3652a3;
+}
+
+.carousel .control-left{
+	left: 10px;
+}
+
+.carousel .control-right{
+	right: 10px;
+}
+
+/*pagination and dots*/
+
+.carousel .control-pagination{
+	display: flex;
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #E2E0D8;
+}
+
+.carousel .control-dot{
+	padding: 5px;
+	font-size: 1.6em;
+	line-height: 1rem;
+	transition: all 0.3s;
+	position: relative;
+	transform: scale(1,1);
+}
+
+.carousel .control-dot.active{
+	transform: scale(1.5, 1.5);
+	color: #3652a3;
+
+}
+
+
+.carousel .control-dot,
+.carousel .control-left,
+.carousel .control-right{
+	cursor: pointer;
+}

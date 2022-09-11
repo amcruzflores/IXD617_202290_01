@@ -1,0 +1,76 @@
+.tabGroup{
+	width: 50%;
+	font-family: 'Noto Sans SC', sans-serif;
+	font-size: 14px;
+
+}
+
+.tabGroup .tabList {
+	display:  flex;
+	padding: 10px;
+	border-block-end: 1px solid lightgrey; /*  border-block-start will show a line on top*/
+}
+
+.tabGroup .tab {
+
+	padding: 1em 1.5em;
+	flex: 1 1 auto;
+	position: relative;
+	color: #3652a3;
+	background-color: #F5F4F0;
+}
+
+.tabGroup .tab:hover {
+	background-color: #3652a3;
+	color: white;
+	height: 20%;
+	transition: all 0.9s;
+	cursor: pointer;
+
+
+}
+
+.tabGroup .tab.active::after {
+	content: '';
+	background-color: #3652a3;
+	width: 100%;
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	height: 4px;
+}
+
+.tabGroup .contentList {
+	width:  100%;
+	height: 100px;
+	position: relative;
+}
+
+
+.tabGroup .content{
+	font-size: 14px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
+	top: 0;
+	left: 0;
+	background-color: #F5F4F0;
+	opacity: 0; /*all invisible until we make them not invisible. 0 zero means you cant see it. all the tabs shown by default need to be hidden so we cant see them*/
+	pointer-events: none; /* we want to set pointer events to none. anything inside there if we click it nothing will happen*/
+}
+
+.tabGroup .content.active{
+	opacity: 1; /* setting opacity to 1one means you can fully see it*/
+	pointer-events: intial; /* when we set pointer events to none it means by default when something is not active, you cant click on it, even though a link is active above the highlighted line, theres a link over to the next tab location and technically the user can still click on that link even though they cant see it so thats why we set the pointer events to none. but when something is active we may want them to click on something so thats why we set pointer events back to "Intial" which is the default which is go ahead and let the browser display it as it normally would and user can click on the link and everything is fine which is what we want*/
+
+}
+
+.tabGroup .content p{
+	width: 100%;
+	justify-content: center;
+
+
+}
