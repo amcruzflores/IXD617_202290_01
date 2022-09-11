@@ -8,6 +8,6 @@ IXD 617 Advanced Tech: Mobile Web
 - https://github.com/amcruzflores/IXD617_202290_01
 
 ### Assignment
-- https://www.annamarieflores.com/aau/ixd617/profile/
+- https://www.annamarieflores.com/aau/ixd617/profile/artist.html
 
 
