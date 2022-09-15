@@ -8,6 +8,9 @@ IXD 617 Advanced Tech: Mobile Web
 - https://github.com/amcruzflores/IXD617_202290_01
 
 ### Assignment
+Profile:
 - https://www.annamarieflores.com/aau/ixd617/profile/artist.html
+CSS Zen Garden
+- https://www.annamarieflores.com/aau/ixd617/csszengarden/
 
 
