@@ -76,7 +76,7 @@
 }
 
 .content {
-    position:;
+    position:absolute;
     top:0;
     left:0;
     width: 100%;
@@ -85,13 +85,13 @@
     overflow:auto;
     opacity:0;
     pointer-events: none;
+    transition: all 0.3s;
 
 }
 
 .content.active {
     pointer-events: initial;
     opacity: 1;
-    transition:all 0.3s;
 }
 
 
