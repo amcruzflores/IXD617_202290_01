@@ -15,7 +15,7 @@ IXD 617 Advanced Tech: Mobile Web
 
 #### Examples:
 
-###### Accordian
+###### Accordian & Tab Group
 - https://www.annamarieflores.com/aau/ixd617/examples/jquery.html
 
 
