@@ -1,6 +1,8 @@
+/* ACCORDIAN */
+
 .accordian dt {
     background-color:#a9bbcb;
-    padding: 0.7em 1em;
+    padding: 0.9em 1em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #f8f8f8;
     font-weight: bold;
@@ -25,6 +27,74 @@
 
 }
 
+/* TAB GROUP */
+
+.tabgroup {
+    height:40vh;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #5d6d78;
+    font-size: 1.1em;
+}
+
+.tabset {
+    display: flex;
+    line-height: 3em;
+    flex:none;
+}
+
+.tab {
+    padding: 0 1em;
+    position: relative;
+}
+
+.tab:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+.tab::after {
+    content:'';
+    height:0;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    background-color: rgb(156, 220, 255);
+}
+
+.tab.active::after {
+    height:3px;
+}
+
+.contentset {
+    flex: 1 1 100%;
+    overflow:hidden;
+    position: relative;
+}
+
+.content {
+    position:;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background-color: white;
+    overflow:auto;
+    opacity:0;
+    pointer-events: none;
+
+}
+
+.content.active {
+    pointer-events: initial;
+    opacity: 1;
+    transition:all 0.3s;
+}
+
+
 
 h1{
   
@@ -38,8 +108,14 @@ h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+h3{
+  
+    color: #8a98a3;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 p {
-    color: blanchedalmond;
+    color: rgb(80, 80, 80);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
