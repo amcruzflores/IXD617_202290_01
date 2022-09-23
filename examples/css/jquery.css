@@ -1,0 +1,50 @@
+.accordian dt {
+    background-color:#a9bbcb;
+    padding: 0.7em 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #f8f8f8;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+.accordian dd {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 1em;
+    margin-inline-start: 0;
+    color: rgb(133, 133, 133);
+    border: 2px solid #a9bbcb;
+    border-top-width: 0;
+    display: none;
+}
+
+
+.accordian dt ~ dt {
+    margin-top: 1em;
+
+}
+
+
+h1{
+  
+    color: #a9bbcb;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2{
+  
+    color: #a9bbcb;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p {
+    color: blanchedalmond;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+   
+    color: #a9bbcb;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
