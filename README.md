@@ -13,4 +13,9 @@ IXD 617 Advanced Tech: Mobile Web
 #### CSS Zen Garden:
 - https://www.annamarieflores.com/aau/ixd617/csszengarden/index.html
 
+#### Examples:
+
+###### Accordian
+- https://www.annamarieflores.com/aau/ixd617/examples/jquery.html
+
 
