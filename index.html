@@ -4,12 +4,152 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Terra Bella - Plant Tracker</title>
+
+
+    <!--<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">-->
+    <link rel="stylesheet" href="src/css/app.css">
+    <script src="lib/js/jquery-2.2.4.min.js"></script>
+    <script src="src/js/app.js"></script>
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
 </head>
 <body>
-    <h1>Annamarie Flores</h1>
-    <p>This is pretty amazing</p>
-    <p>IXD 617 - Tech: Mobile Web</p>
+
+<!-- SIGN IN PAGE -->
+     <section data-role="page" id="signin-page">
+        <div data-role="main">
+            <form>
+                <input type="text">
+                <input type="password">
+                <button class="form-button">Sign In</button>
+            </form>
+            <div>
+                <a href="#recent-page" class="form-button">Sign In</a>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+<!-- RECENT PAGE -->
+    <section data-role="page" id="recent-page">
+        
+        <!--<header data-role="header">
+          Navigation
+        </header>-->
+        
+        <div data-role="main">
+            Map!
+        </div>
+        <footer data-role="footer">
+            <!--Navigation-->
+            <ul>
+                    <li><a href="#recent-page">Recent</a></li>
+                    <li><a href="#list-page">List</a></li>
+                    <li><a href="#user-profile-page">User Profile</a></li>
+            </ul>
+        </footer>
+    </section>
+
+
+
+
+<!-- LIST PAGE -->
+    <section data-role="page" id="list-page">
+        
+        <header data-role="header">
+            <!--Navigation-->
+            Native Plant List
+            
+        </header>
+        
+        <div data-role="main">
+            <!--div.nativeplantlist-item*10>a[href="#nativeplant-profile-page"]>{Native Plant $}-->
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 1</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 2</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 3</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 4</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 5</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 6</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 7</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 8</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 9</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 10</a></div>
+        </div>
+        <footer data-role="footer">
+            <!--Navigation-->
+            <ul>
+                    <li><a href="#recent-page">Recent</a></li>
+                    <li><a href="#list-page">List</a></li>
+                    <li><a href="#user-profile-page">User Profile</a></li>
+            </ul>
+        </footer>
+    </section>
+
+
+
+
+
+
+<!-- USER PROFILE PAGE -->
+    <section data-role="page" id="user-profile-page">
+        
+       <!-- <header data-role="header">
+            Navigation
+        </header>
+        -->
+        
+        <div data-role="main">
+            User Profile
+        </div>
+        <footer data-role="footer">
+            <!--Navigation-->
+            <ul>
+                    <li><a href="#recent-page">Recent</a></li>
+                    <li><a href="#list-page">List</a></li>
+                    <li><a href="#user-profile-page">User Profile</a></li>
+            </ul>
+        </footer>
+    </section>
+
+
+<!-- NATIVE PLANT PROFILE PAGE ~ back button and no core nav footer-->
+<section data-role="page" id="nativeplant-profile-page">
+        
+     <header data-role="header">
+         <!--Navigation-->
+        <h1>Native Plant Profile</h1>
+        <ul>
+         
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#animal-edit-page">Edit</a></li>
+            
+            
+
+        </ul>
+     
+    </header>
+    Native Plant
+     
+     <div data-role="main">
+         Native Plant Profile
+     </div>
+     
+     <!--<footer data-role="footer">
+        Navigation
+         <ul>
+                 <li><a href="#recent-page">Recent</a></li>
+                 <li><a href="#list-page">List</a></li>
+                 <li><a href="#user-profile-page">User Profile</a></li>
+         </ul>
+     </footer>
+    -->
+
+ </section>
+
 
 </body>
 </html>

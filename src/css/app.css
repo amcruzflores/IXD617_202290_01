@@ -1,0 +1,131 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --font-header:Helvetica, Arial, sans-serif;
+    --font-body:var(--font-header);
+
+    --header-height: 3rem;
+
+    --color-main-rgb: 88,157,96;
+    --color-main-hue: 125;
+    --color-main-light: hsl(var(--color-main-hue), 43%, 61%);
+    --color-main-medium: hsl(var(--color-main-hue), 38%, 27%);
+    --color-main-dark: hsl(var(--color-main-hue), 100%, 27%);
+}
+
+body {
+    margin:0;
+    font-family: var(--font-body);
+}
+
+a {
+    color:var(--color-main-dark);
+    font-weight:bold;
+    text-decoration: none;
+}
+
+
+/* APP STRUCTURE */
+.ui-loader {
+    display: none;
+}
+
+[data-role="page"] {
+   position:fixed;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+   display:none;
+   overflow: hidden;
+}
+
+[data-role="page"].ui-page-active {
+    display: flex;
+    flex-direction:column;
+}
+
+[data-role="main"] {
+    flex: 1 1 100%;
+    position: relative;
+
+    z-index: 1;
+}
+
+[data-role="header"],
+[data-role="footer"] {
+
+    line-height: var(--header-height);
+    /*line-height: 75px;*/
+    height:var(--header-height);
+    position:relative;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+
+    z-index: 2;
+}
+
+
+
+
+
+/* Core Navigation */
+[data-role="header"] ul,
+[data-role="footer"] ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+
+[data-role="footer"] li {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+
+[data-role="header"] h1 {
+position: absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+text-align: center;
+font-size: 1em;
+margin: 0;
+}
+
+
+[data-role="header"] a {
+    padding: 0 1em;
+}
+
+
+[data-role="header"] a,
+[data-role="footer"] a {
+    display: block;
+}
+
+
+
+
+
+
+/* Basic Layout */
+
+.display-flex { display:flex; }
+.display-inline-flex { display:inline-flex; }
+.display-block { display:block; }
+.display-inline-block { display:inline-block; }
+
+.flex-none { flex:none; }
+.flex-stetch { flex:1 1 auto; }
+
+.flex-column { flex-direction:column; }
