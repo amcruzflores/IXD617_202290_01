@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terra Bella - Plant Tracker</title>
-
-
     <!--<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">-->
     <link rel="stylesheet" href="src/css/app.css">
+    <link rel="stylesheet" href="https://use.typekit.net/onh7dgd.css">
+
+
+    
     <script src="lib/js/jquery-2.2.4.min.js"></script>
     <script src="src/js/app.js"></script>
+    <script src="src/js/signin.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
@@ -18,22 +21,70 @@
 
 <!-- SIGN IN PAGE -->
      <section data-role="page" id="signin-page">
-        <div data-role="main">
-            <form>
-                <input type="text">
-                <input type="password">
-                <button class="form-button">Sign In</button>
-            </form>
-            <div>
-                <a href="#recent-page" class="form-button">Sign In</a>
+        <div data-role="main" class="display-flex flex-column">
+           
+            <div class="flex-stretch signin-hero" style="flex-grow: 2;">
+            <img src="images/icons/abstract.png" alt="leaf" class="hero-icon">
             </div>
+
+            <form class="form" id="signin-form" data-ajax="false">
+                <div class="form-control">
+                    <label class="form-label" for="signin-username">Username</label>  
+                    <input class="form-input" type="text" id="signin-username" data-role="none"
+                    placeholder="Type your Username">
+                </div>
+                <div class="form-control">
+                    <label class="form-label" for="signin-password">Password</label>  
+                    <input class="form-input" type="password" id="signin-password" data-role="none"
+                    placeholder="Type your Password">
+                </div>
+                <div class="form-control">
+                <input type="submit" class="form-button" value="Click me" data-role="none">
+                
+                <!--<button type="submit" class="form-button" data-role="none">Sign In</button> -->
+                </div>
+                <div class="form-control" style="text-align: center; font-size: 0.7em;">
+                    Don't have an account? <a href="#signup-page">Sign Up!</a>
+                </div>
+            </form>
+            <div class="flex-stretch"></div>
         </div>
     </section>
     
 
+                                        <!-- SIGN UP PAGE -->
+    <section data-role="page" id="signup-page">
+        <div data-role="main" class="display-flex flex-column flex-justify-center">
+            <form class="form" id="signup-form" data-ajax="false">
+                <div class="form-control">
+                    <label class="form-label" for="signup-username">Username</label>  
+                    <input class="form-input" type="text" id="signup-username" data-role="none"
+                    placeholder="Type your Username">
+                </div>
+                <div class="form-control">
+                    <label class="form-label" for="signup-password">Type In Password</label>  
+                    <input class="form-input" type="password" id="signup-password" data-role="none"
+                    placeholder="Type your Password">
+                    
+                </div>
+                <div class="form-control">
+                    <label class="form-label" for="signup-confirm">Confirm Password</label>  
+                    <input class="form-input" type="password" id="signup-confirm" data-role="none"
+                    placeholder="Confirm your Password">
+                </div>
+                <div class="form-control">
+                <button type="submit" class="form-button" data-role="none">Sign Up</button>
+                </div>
+            <div class="form-control" style="text-align: center; font-size: 0.7em;">
+                Already have an account? <a href="#signin-page">Sign In!</a>
+            </div>
+            </form>
+        </div>
+    </section>
 
 
-<!-- RECENT PAGE -->
+
+    <!-- RECENT PAGE -->
     <section data-role="page" id="recent-page">
         
         <!--<header data-role="header">
@@ -41,31 +92,67 @@
         </header>-->
         
         <div data-role="main">
-            Map!
+            <!--Map!-->
+            <div class="map"></div>
+            
+            <div class="floater top right">
+            <a href="#" class="btn-circle" data-activate="#plant-add-modal">🍃</a>
+            </div>
+
+            <div id="plant-add-modal" class="modal">
+                <div class="modal-back transparent" data-deactivate="#plant-add-modal"></div>
+                <div class="modal-drawer bottom">
+                    <div class="modal-head">Add Native Plant</div>
+                    <div class="modal-body">
+                    </div>
+                    <!--<div class="modal-foot">Foot</div>-->
+                </div>
+            </div>
+
+            <div class="floater top left">
+                <a href="#" class="btn-circle" data-activate="#recent-add-modal">🖹</a>
+            </div>
+            
+            <div id="recent-add-modal" class="modal">
+                    <div class="modal-back transparent" data-deactivate="#recent-add-modal"></div>
+                    <div class="modal-drawer left">
+                        <div class="modal-head">Love Letter</div>
+                        <div class="modal-body">
+                    <h2>Welcome to my native plant tracker!😍</h2>
+                        <p>Terra Bella is an app intended for nature lovers and for those who want to share their love for the land.</p>
+                        <br>
+                        <h3>Enjoy!</h3>
+                        <h2>~Annamarie</h2>
+                        </div>
+                        <!--<div class="modal-foot">Foot</div>-->
+                    </div>
+            </div>
         </div>
         <footer data-role="footer">
             <!--Navigation-->
             <ul>
                     <li><a href="#recent-page">Recent</a></li>
-                    <li><a href="#list-page">List</a></li>
+                    <li><a href="#list-page">Plant List</a></li>
                     <li><a href="#user-profile-page">User Profile</a></li>
             </ul>
         </footer>
+        
+        
     </section>
 
 
 
 
-<!-- LIST PAGE -->
+                                        <!-- LIST PAGE -->
     <section data-role="page" id="list-page">
         
         <header data-role="header">
             <!--Navigation-->
-            Native Plant List
-            
+            <h1>Native Plant List</h1>
         </header>
         
         <div data-role="main">
+            <div class="plantlist">
             <!--div.nativeplantlist-item*10>a[href="#nativeplant-profile-page"]>{Native Plant $}-->
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 1</a></div>
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 2</a></div>
@@ -77,6 +164,34 @@
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 8</a></div>
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 9</a></div>
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 10</a></div>
+            
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 11</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 12</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 13</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 14</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 15</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 16</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 17</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 18</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 19</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 20</a></div>
+            
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 21</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 22</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 23</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 24</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 25</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 26</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 27</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 28</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 29</a></div>
+            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 30</a></div>
+        </div>
+
+        <div class="floater bottom right">
+            <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
+        </div>
+       
         </div>
         <footer data-role="footer">
             <!--Navigation-->
@@ -86,6 +201,16 @@
                     <li><a href="#user-profile-page">User Profile</a></li>
             </ul>
         </footer>
+        <div id="list-add-modal" class="modal">
+            <div class="modal-back" data-deactivate="#list-add-modal"></div>
+            <div class="modal-popup">
+                <div class="modal-head">Native Plant</div>
+                <div class="modal-body">
+                    <img src="images/icons/leaf.png" alt="leaf" class="modal-icon">
+                </div>
+                <div class="modal-foot">Foot</div>
+            </div>
+        </div>
     </section>
 
 
@@ -93,7 +218,7 @@
 
 
 
-<!-- USER PROFILE PAGE -->
+                                    <!-- USER PROFILE PAGE -->
     <section data-role="page" id="user-profile-page">
         
        <!-- <header data-role="header">
@@ -102,7 +227,10 @@
         -->
         
         <div data-role="main">
-            User Profile
+            <h1>User Profile</h1>
+            <div>
+                <a href="#" class="js-logout">Log out</a>
+            </div>
         </div>
         <footer data-role="footer">
             <!--Navigation-->
