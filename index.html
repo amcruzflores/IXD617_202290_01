@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terra Bella - Plant Tracker</title>
+   
+    <title>Terra Bella - Native Plant Tracker</title>
+
+    <meta name="mobile-web-app-capable" content="yes"> 
+    <link rel="icon" sizes="256x256" href="./icon256x256.png"> 
+   
     <!--<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">-->
     <link rel="stylesheet" href="src/css/app.css">
     <link rel="stylesheet" href="https://use.typekit.net/onh7dgd.css">
@@ -17,6 +22,7 @@
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
+
 <body>
 
 <!-- SIGN IN PAGE -->
@@ -24,7 +30,7 @@
         <div data-role="main" class="display-flex flex-column">
            
             <div class="flex-stretch signin-hero" style="flex-grow: 2;">
-            <img src="images/icons/abstract.png" alt="leaf" class="hero-icon">
+            <img src="images/logo_terrabella.png" alt="logo" class="hero-icon">
             </div>
 
             <form class="form" id="signin-form" data-ajax="false">
@@ -39,7 +45,7 @@
                     placeholder="Type your Password">
                 </div>
                 <div class="form-control">
-                <input type="submit" class="form-button" value="Click me" data-role="none">
+                <input type="submit" class="form-button" value="Sign In" data-role="none">
                 
                 <!--<button type="submit" class="form-button" data-role="none">Sign In</button> -->
                 </div>
@@ -52,9 +58,12 @@
     </section>
     
 
-                                        <!-- SIGN UP PAGE -->
+<!-- SIGN UP PAGE -->
     <section data-role="page" id="signup-page">
         <div data-role="main" class="display-flex flex-column flex-justify-center">
+            <div class="flex-stretch signin-hero" style="flex-grow: 3;">
+                <img src="images/icons/abstract.png" alt="logo" class="hero-icon">
+                </div>
             <form class="form" id="signup-form" data-ajax="false">
                 <div class="form-control">
                     <label class="form-label" for="signup-username">Username</label>  
@@ -83,8 +92,141 @@
     </section>
 
 
+    <!-- ADD PLANT PAGE -->
+    <section data-role="page" id="addplant-page">
+        <header data-role="header">
+            <h1>Add Native Plant</h1>
+            <ul>
+             
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                
+                
+            </ul>
+            </header>
+        <div data-role="main" class="display-flex flex-column flex-justify-center">
+            <div class="flex-stretch signin-hero" style="flex-grow: 2;">
+                <h2>[Added] Native Plant Name</h2>
+                <img src="images/plantPot.png" alt="plantPot" class="plant-icon">
+                <h3> Description of Native Plant</h3>    
+            </div>
 
-    <!-- RECENT PAGE -->
+            <form class="form" id="addplant-form" data-ajax="false">
+                <div class="form-control">
+                    <label class="form-label" for="plant-name">Native Plant Name Added To Library!</label>  
+                   
+                </div>
+                <div class="form-control">
+                    <label class="form-label" for="plant-description">Native Plant Description Added To Library!</label>  
+                    
+                </div>
+              
+        
+            </form>
+        </div>
+        <footer data-role="footer">
+            <!--Navigation-->
+            <ul>
+                <li><a href="#recent-page">Map🚩</a></li>
+                <li><a href="#list-page">Plant Library ☰</a></li>
+                <li><a href="#user-profile-page">User Profile👤</a></li>
+            </ul>
+        </footer>
+    </section>
+
+    <!-- EDIT PLANT PAGE -->
+    <section data-role="page" id="editplant-page">
+        <header data-role="header">
+            <h1>Edit Native Plant</h1>
+            <ul>
+             
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                
+                
+            </ul>
+            </header>
+        <div data-role="main" class="display-flex flex-column flex-justify-center">
+            <div class="flex-stretch signin-hero" style="flex-grow: 2;">
+                <h2>[Edited] Native Plant</h2>
+                <img src="images/plantPot.png" alt="plantPot" class="plant-icon">
+                    
+            </div>
+
+            <form class="form" id="editplant-form" data-ajax="false">
+                <div class="form-control">
+                    <label class="form-label" for="editPlant-name">Native Plant Name</label>  
+                    <input class="form-input" type="text" id="editplant-page" data-role="none"
+                    placeholder="Change name of native plant">
+                </div>
+                <div class="form-control">
+                    <label class="form-label" for="editplant-description">Change Description</label>  
+                    <input class="form-input" type="text" id="editplant-page" data-role="none"
+                    placeholder="Change description & location">
+                </div>
+                <div class="form-control">
+                    <a href="#nativeplant-profile-page-updated">Submit & Save</a>    
+                </div>
+        
+            </form>
+        </div>
+        <footer data-role="footer">
+            <!--Navigation-->
+            <ul>
+                <li><a href="#recent-page">Map🚩</a></li>
+                <li><a href="#list-page">Plant Library ☰</a></li>
+                <li><a href="#user-profile-page">User Profile👤</a></li>
+            </ul>
+        </footer>
+    </section>
+
+
+    <!-- UPDATED PLANT PAGE -->
+    <section data-role="page" id="nativeplant-profile-page-updated">
+        <header data-role="header">
+            <h1>Native Plant Profile</h1>
+            <ul>
+             
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                
+                
+            </ul>
+            </header>
+        <div data-role="main" class="display-flex flex-column flex-justify-center">
+            <div class="flex-stretch signin-hero" style="flex-grow: 2;">
+                <h2>[Updated] Native Plant Name</h2>
+                <img src="images/cactiSquare.png" alt="leaf" class="plant-icon">
+                <h3> Description of Native Plant</h3>    
+            </div>
+
+            <form class="form" id="addplant-form" data-ajax="false">
+                <div class="form-control">
+                    <label class="form-label" for="plant-name">Native Plant Name & Library Updated!</label>  
+                   
+                </div>
+                <div class="form-control">
+                    <label class="form-label" for="plant-description">Native Plant Description & Library Updated!</label>  
+                    
+                </div>
+            
+        
+            </form>
+        </div>
+        <footer data-role="footer">
+            <!--Navigation-->
+            <ul>
+                <li><a href="#recent-page">Map🚩</a></li>
+                <li><a href="#list-page">Plant Library ☰</a></li>
+                <li><a href="#user-profile-page">User Profile👤</a></li>
+            </ul>
+        </footer>
+    </section>
+
+
+
+
+    <!-- RECENT PAGE / MAP -->
     <section data-role="page" id="recent-page">
         
         <!--<header data-role="header">
@@ -96,21 +238,52 @@
             <div class="map"></div>
             
             <div class="floater top right">
-            <a href="#" class="btn-circle" data-activate="#plant-add-modal">🍃</a>
+            <a href="#" class="btn-circle" data-activate="#plant-add-modal">📸</a>
             </div>
 
             <div id="plant-add-modal" class="modal">
                 <div class="modal-back transparent" data-deactivate="#plant-add-modal"></div>
                 <div class="modal-drawer bottom">
+                    
                     <div class="modal-head">Add Native Plant</div>
+                     
                     <div class="modal-body">
+                        <form class="form" id="addplant-page" data-ajax="false">
+                            <label class="form-label" for="plant-name">Uploaded Image [Camera Feature]</label>
+                            <img src="images/plantPot.png" alt="leaf" class="plant-icon">
+                            <div class="form-control">
+                                <label class="form-label" for="plant-name">Native Plant Name</label>  
+                                <input class="form-input" type="text" id="addplant-page" data-role="none"
+                                placeholder="Type name of native plant">
+                            </div>
+                            <div class="form-control">
+                                <label class="form-label" for="plant-description">Description</label>  
+                                <input class="form-input" type="text" id="addplant-page" data-role="none"
+                                placeholder="Type your description & location">
+                            </div>
+                            <div class="form-control">
+                                <label class="form-label" for="plant-name">Add Image</label>  
+                                <input class="form-input" type="text" id="addplant-page" data-role="none"
+                                placeholder="Browse Files & Select Image">
+                            </div>
+                            <div class="form-control">
+                                <label class="form-label" for="plant-name">Add Location</label>  
+                                <input class="form-input" type="text" id="addplant-page" data-role="none"
+                                placeholder="Add Location">
+                            </div>
+                            <div class="form-control">
+                                <a href="#addplant-page">Submit</a>    
+                            </div>
+                                
+
+                            </form>
                     </div>
                     <!--<div class="modal-foot">Foot</div>-->
                 </div>
             </div>
 
             <div class="floater top left">
-                <a href="#" class="btn-circle" data-activate="#recent-add-modal">🖹</a>
+                <a href="#" class="btn-circle" data-activate="#recent-add-modal">📃</a>
             </div>
             
             <div id="recent-add-modal" class="modal">
@@ -119,10 +292,11 @@
                         <div class="modal-head">Love Letter</div>
                         <div class="modal-body">
                     <h2>Welcome to my native plant tracker!😍</h2>
-                        <p>Terra Bella is an app intended for nature lovers and for those who want to share their love for the land.</p>
+                        <p>Terra Bella is an app intended for nature lovers and for those who want to celebrate their love for the land.</p>
+                        
+                        <h3>Instructions:</h3>
+                        <p>Take a photo of a native plant and record your findings! Once submitted you will be able to track each plant at its location. You'll discover where the plant lives and record any information you'd like.</p>
                         <br>
-                        <h3>Enjoy!</h3>
-                        <h2>~Annamarie</h2>
                         </div>
                         <!--<div class="modal-foot">Foot</div>-->
                     </div>
@@ -131,9 +305,9 @@
         <footer data-role="footer">
             <!--Navigation-->
             <ul>
-                    <li><a href="#recent-page">Recent</a></li>
-                    <li><a href="#list-page">Plant List</a></li>
-                    <li><a href="#user-profile-page">User Profile</a></li>
+                    <li><a href="#recent-page">Map🚩</a></li>
+                    <li><a href="#list-page">Plant Library ☰</a></li>
+                    <li><a href="#user-profile-page">User Profile👤</a></li>
             </ul>
         </footer>
         
@@ -196,12 +370,53 @@
         <footer data-role="footer">
             <!--Navigation-->
             <ul>
-                    <li><a href="#recent-page">Recent</a></li>
-                    <li><a href="#list-page">List</a></li>
-                    <li><a href="#user-profile-page">User Profile</a></li>
+                <li><a href="#recent-page">Map🚩</a></li>
+                <li><a href="#list-page">Plant Library ☰</a></li>
+                <li><a href="#user-profile-page">User Profile👤</a></li>
             </ul>
         </footer>
         <div id="list-add-modal" class="modal">
+            <div class="modal-back" data-deactivate="#list-add-modal"></div>
+            <div class="modal-popup">
+               <!-- <div class="modal-head">Add New Native Plant</div> -->
+                <div class="modal-body">
+                    <h3 style="color: rgb(141, 199, 141);">New Native Plant</h3>
+                    <form class="form" id="addplant-page" data-ajax="false">
+                        <label class="form-label" for="plant-name">Uploaded Image</label> 
+                        <img src="images/plantPot.png" alt="leaf" class="smallplant-icon">
+                        <div class="form-control">
+                            <label class="form-label" for="plant-name">Add Image</label>  
+                            <input class="form-input" type="text" id="addplant-page" data-role="none"
+                            placeholder="Browse Files & Select Image">
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label" for="plant-name">Add Location</label>  
+                            <input class="form-input" type="text" id="addplant-page" data-role="none"
+                            placeholder="Add Location">
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label" for="plant-name">Native Plant Name</label>  
+                            <input class="form-input" type="text" id="addplant-page" data-role="none"
+                            placeholder="Type Name of Native Plant">
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label" for="plant-description">Description</label>  
+                            <input class="form-input" type="text" id="addplant-page" data-role="none"
+                            placeholder="Type Your Description">
+                        </div>
+
+                        <div class="form-control">
+                            <a href="#addplant-page">Submit</a>    
+                        </div>
+                            
+
+                        </form>
+                </div>
+               <!-- <div class="modal-foot">Foot</div>-->
+            </div>
+        </div>
+
+       <!-- <div id="list-add-modal" class="modal">
             <div class="modal-back" data-deactivate="#list-add-modal"></div>
             <div class="modal-popup">
                 <div class="modal-head">Native Plant</div>
@@ -211,6 +426,7 @@
                 <div class="modal-foot">Foot</div>
             </div>
         </div>
+    -->
     </section>
 
 
@@ -221,60 +437,85 @@
                                     <!-- USER PROFILE PAGE -->
     <section data-role="page" id="user-profile-page">
         
-       <!-- <header data-role="header">
-            Navigation
+       <header data-role="header">
+        <h1>User Profile</h1>
+        <ul>
+         
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#editprofile-page">Edit</a></li>
+            
+            
+
+        </ul>
         </header>
-        -->
-        
-        <div data-role="main">
-            <h1>User Profile</h1>
-            <div>
+    
+            <div class="flex-stretch signin-hero">
+            <div class="display-flex flex-column flex-justify-center">
+                <img src="images/userProfilePhoto.png" alt="profile" class="hero-icon">
+                <h2>Mr. California</h2>
+                <p>I enjoy finding plants I like.</p>
                 <a href="#" class="js-logout">Log out</a>
             </div>
+        </div>
         </div>
         <footer data-role="footer">
             <!--Navigation-->
             <ul>
-                    <li><a href="#recent-page">Recent</a></li>
-                    <li><a href="#list-page">List</a></li>
-                    <li><a href="#user-profile-page">User Profile</a></li>
+                <li><a href="#recent-page">Map🚩</a></li>
+                <li><a href="#list-page">Plant Library ☰</a></li>
+                <li><a href="#user-profile-page">User Profile👤</a></li>
             </ul>
         </footer>
     </section>
 
 
-<!-- NATIVE PLANT PROFILE PAGE ~ back button and no core nav footer-->
+<!-- NATIVE PLANT PROFILE PAGE -->
 <section data-role="page" id="nativeplant-profile-page">
         
      <header data-role="header">
+
          <!--Navigation-->
         <h1>Native Plant Profile</h1>
         <ul>
          
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#animal-edit-page">Edit</a></li>
+            <li><a href="#editplant-page">Edit</a></li>
             
             
 
         </ul>
      
     </header>
-    Native Plant
+ 
      
      <div data-role="main">
-         Native Plant Profile
+       
+         <div class="flex-stretch signin-hero" style="flex-grow: 2;">
+            <h2>Native Plant Name</h2>
+            <img src="images/plantPot.png" alt="leaf" class="plant-icon">
+            <h3> Description of Native Plant</h3>    
+        </div>
+
+        <form class="form" id="addplant-form" data-ajax="false">
+          
+            <!--<div class="form-control">
+                <a href="#list-page">Go To Plant Library</a>    
+            </div>
+        -->
+    
+        </form>
      </div>
      
-     <!--<footer data-role="footer">
-        Navigation
-         <ul>
-                 <li><a href="#recent-page">Recent</a></li>
-                 <li><a href="#list-page">List</a></li>
-                 <li><a href="#user-profile-page">User Profile</a></li>
-         </ul>
-     </footer>
-    -->
+     <footer data-role="footer">
+        <!--Navigation-->
+        <ul>
+            <li><a href="#recent-page">Map🚩</a></li>
+            <li><a href="#list-page">Plant Library ☰</a></li>
+            <li><a href="#user-profile-page">User Profile👤</a></li>
+        </ul>
+    </footer>
 
  </section>
 
