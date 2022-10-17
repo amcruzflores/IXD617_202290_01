@@ -28,6 +28,9 @@ IXD 617 Advanced Tech: Mobile Web
 #### Mobile Site
 - https://annamarieflores.com/aau/ixd617/index.html
 
+#### Midterm Screenshots
+- https://annamarieflores.com/aau/ixd617/screenshots/midterm
+
 
 
 
