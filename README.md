@@ -31,6 +31,8 @@ IXD 617 Advanced Tech: Mobile Web
 #### Midterm Screenshots
 - https://annamarieflores.com/aau/ixd617/screenshots/midterm
 
+#### Random Data Generator
+- https://annamarieflores.com/aau/ixd617/data/generator.html
 
 
 
