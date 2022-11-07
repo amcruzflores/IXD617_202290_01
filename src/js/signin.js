@@ -1,6 +1,6 @@
 
 
-const checkSigninForm = () => {
+export const checkSigninForm = () => {
     const userval = $("#signin-username").val();
     const passval = $("#signin-password").val();
 
@@ -26,7 +26,7 @@ const checkSigninForm = () => {
 }
 
 
-const checkUserId = () => {
+export const checkUserId = () => {
     const pages = ["#signin-page", "#signup-page", ""];
 
     if (sessionStorage.userId === undefined) {

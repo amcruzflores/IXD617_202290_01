@@ -17,9 +17,10 @@
 
     
     <script src="lib/js/jquery-2.2.4.min.js"></script>
-    <script src="src/js/app.js"></script>
-    <script src="src/js/signin.js"></script>
+    <!--<script src="src/js/app.js"></script>-->
+    <!--<script src="src/js/signin.js"></script>-->
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="src/js/app.js" type="module"></script>
 
 </head>
 
@@ -127,9 +128,9 @@
         <footer data-role="footer">
             <!--Navigation-->
             <ul>
-                <li><a href="#recent-page">Map🚩</a></li>
-                <li><a href="#list-page">Plant Library ☰</a></li>
-                <li><a href="#user-profile-page">User Profile👤</a></li>
+                <li><a href="#recent-page">Map</a></li>
+                <li><a href="#list-page">Plant Library </a></li>
+                <li><a href="#user-profile-page">User Profile</a></li>
             </ul>
         </footer>
     </section>
@@ -326,8 +327,8 @@
         </header>
         
         <div data-role="main">
-            <div class="plantlist">
-            <!--div.nativeplantlist-item*10>a[href="#nativeplant-profile-page"]>{Native Plant $}-->
+            <div class="plantlist"></div>
+            <!--div.nativeplantlist-item*10>a[href="#nativeplant-profile-page"]>{Native Plant $}
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 1</a></div>
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 2</a></div>
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 3</a></div>
@@ -338,29 +339,7 @@
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 8</a></div>
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 9</a></div>
             <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 10</a></div>
-            
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 11</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 12</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 13</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 14</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 15</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 16</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 17</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 18</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 19</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 20</a></div>
-            
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 21</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 22</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 23</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 24</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 25</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 26</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 27</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 28</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 29</a></div>
-            <div class="nativeplantlist-item"><a href="#nativeplant-profile-page">Native Plant 30</a></div>
-        </div>
+            -->
 
         <div class="floater bottom right">
             <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
@@ -429,6 +408,50 @@
     -->
     </section>
 
+    <!-- CHOOSE PLANT PAGE -->
+    <section data-role="page" id="choose-plant-page">
+        <header data-role="header">
+            <h1>Choose Plant</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#choose-location-page">Next</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            form for choose plant
+        </div>
+    </section>
+
+    <!-- CHOOSE LOCATION PAGE -->
+    <section data-role="page" id="choose-location-page">
+        <header data-role="header">
+            <h1>Choose Location</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#choose-description-page">Next</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <div class="map"></div>
+        </div>
+    </section>
+
+        <!-- CHOOSE LOCATION PAGE -->
+        <section data-role="page" id="choose-description-page">
+            <header data-role="header">
+                <h1>Description of Plant</h1>
+                <ul>
+                    <li><a href="#" data-rel="back">Back</a></li>
+                    <li class="flex-stretch"></li>
+                    <li><a href="#list-page">Save</a></li>
+                </ul>
+            </header>
+            <div data-role="main">
+                for for description
+            </div>
+        </section>
 
 
 
@@ -488,7 +511,19 @@
         </ul>
      
     </header>
- 
+    <div data-role="main">
+        <div class="plant-profile-top"></div>
+        <div class="plant-profile-nav">
+            <div class="nav-link active">Map</div>
+            <div class="nav-link">Description</div>
+        </div>
+        <div class="plant-profile-bottom">
+            <div class="plant-profile-section section-map active">
+                <div class="map"></div>
+            </div>
+            <div class="plant-profile-section section-description"></div>
+        </div>
+    </div>
      
      <div data-role="main">
        
