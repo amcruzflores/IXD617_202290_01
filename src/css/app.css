@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 :root {
     --font-header:Helvetica, Arial, sans-serif;
     --font-body:var(--font-header);
@@ -14,16 +15,11 @@
     --color-main-medium: hsl(var(--color-main-hue), 38%, 27%);
     --color-main-dark: hsl(var(--color-main-hue), 100%, 27%);
 
-
     --color-neutral-lighter: rgb(211, 255, 209);
     --color-neutral-light: rgb(144, 203, 141);
     --color-neutral-medium: rgb(112, 165, 109);
     --color-neutral-dark: rgb(86, 131, 84);
-
-
 }
-
-
 
 body {
     margin:0;
@@ -45,7 +41,6 @@ a {
 .ui-loader {
     display: none;
 }
-
 [data-role="page"] {
    position:fixed;
    top:0;
@@ -55,7 +50,6 @@ a {
    display:none;
    overflow: hidden;
 }
-
 [data-role="page"].ui-page-active {
     display: flex;
     flex-direction:column;
@@ -71,7 +65,6 @@ a {
 
 [data-role="header"],
 [data-role="footer"] {
-
     line-height: var(--header-height);
     /*line-height: 75px;*/
     height:var(--header-height);
@@ -85,8 +78,6 @@ a {
 
 
 
-
-
 /* Core Navigation */
 [data-role="header"] ul,
 [data-role="footer"] ul {
@@ -97,13 +88,10 @@ a {
     width: 100%;
     position: relative;
 }
-
-
 [data-role="footer"] li {
     flex: 1 1 auto;
     text-align: center;
 }
-
 
 [data-role="header"] h1 {
 position: absolute;
@@ -117,12 +105,9 @@ font-size: 1em;
 margin: 0;
 }
 
-
 [data-role="header"] a {
     padding: 0 1em;
 }
-
-
 [data-role="header"] a,
 [data-role="footer"] a {
     display: block;
@@ -131,10 +116,7 @@ margin: 0;
 
 
 
-
-
 /* Basic Layout Tools */
-
 .display-flex { display:flex; }
 .display-inline-flex { display:inline-flex; }
 .display-block { display:block; }
@@ -149,6 +131,11 @@ margin: 0;
 .flex-column { flex-direction:column; }
 
 .overscroll { overflow: auto; }
+
+
+
+.padded { padding:1em; }
+.full { height:100%; }
 
 
 
@@ -188,10 +175,14 @@ margin: 0;
     text-decoration: none;
 }
 
+
+
+
 #signin-form,
 #signup-form {
     padding: 1em;
 }
+
 
 .signin-hero {
     display: flex;
@@ -231,9 +222,9 @@ margin: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../../images/googleMap.png');
+ /* background-image: url('../../images/googleMap.png');
     background-position: center;
-    background-size: cover;
+    background-size: cover;     */
 }
 
 /* FLOATER */
@@ -302,7 +293,7 @@ margin: 0;
     flex-direction: column;
     border-radius: 0.2em;
     overflow:hidden;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 
 .modal.active .modal-popup {
@@ -317,6 +308,15 @@ margin: 0;
     overflow:hidden;
     transition: all 0.3s;
     box-shadow: 0 0 5px rgba(255, 249, 249, 0.3);
+}
+.modal-drawer.island {
+    box-shadow: initial;
+}
+.modal-drawer.island .modal-body {
+    margin:1em;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border-radius:1em;
+
 }
 
 .modal-drawer.right,
@@ -354,6 +354,8 @@ margin: 0;
 
 }
 
+
+
 /* PLANTLIST */
 .plantlist {
     height: 100%;
@@ -362,6 +364,9 @@ margin: 0;
 
     padding: 1em;
 }
+
+
+
 
 [data-role="footer"] .icon {
     width: 1.3rem;
@@ -381,6 +386,10 @@ margin: 0;
     font-size: 0.6rem;
     display: block;
 }
+
+
+
+
 
 
 
@@ -450,4 +459,64 @@ margin: 0;
 .plant-profile-section.active {
     opacity:1;
     pointer-events: initial;
+}
+
+
+
+
+
+.plant-map-description {
+    display:flex;
+}
+.plant-map-image img{
+    width:80px;
+    aspect-ratio: 1 / 1;
+    vertical-align: middle;
+    object-fit:cover;
+}
+.plant-map-body {
+    padding: 1em;
+}
+.plant-map-body h1 {
+    margin:0;
+}
+
+
+
+
+.user-profile-image img {
+    width:100%;
+    object-fit: cover;
+    aspect-ratio: 1/ 1;
+    border-radius: 50%;
+    padding:4em;
+}
+.user-profile-body {
+    padding:2em;
+}
+.user-profile-name {
+    font-weight:1.5em;
+}
+
+
+.icon {
+    font-size: 1em;
+    width: 1em;
+    height: 1em;
+}
+
+
+
+
+.settings {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.settings li {
+    padding: 0.5em 1em;
+
+}
+.settings li~li {
+    border-top: 1px solid var(--color-neutral-lighter);
 }
