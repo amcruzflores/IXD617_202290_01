@@ -29,12 +29,12 @@ body {
     font-style: normal;
 }
 
-
 a {
     color:var(--color-main-dark);
     font-weight:bold;
     text-decoration: none;
 }
+
 
 
 /* APP STRUCTURE */
@@ -71,9 +71,16 @@ a {
     position:relative;
     overflow: hidden;
     background-color: white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 
-    z-index: 2;
+}
+[data-role="header"]:last-of-type,
+[data-role="footer"]:first-of-type {
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    z-index:2;
+}
+[data-role="header"]:not(:last-of-type),
+[data-role="footer"]:not(:first-of-type) {
+    z-index:3;
 }
 
 
@@ -116,6 +123,13 @@ margin: 0;
 
 
 
+
+
+
+
+
+
+
 /* Basic Layout Tools */
 .display-flex { display:flex; }
 .display-inline-flex { display:inline-flex; }
@@ -131,6 +145,8 @@ margin: 0;
 .flex-column { flex-direction:column; }
 
 .overscroll { overflow: auto; }
+
+.hidden { display: none; }
 
 
 
@@ -463,8 +479,6 @@ margin: 0;
 
 
 
-
-
 .plant-map-description {
     display:flex;
 }
@@ -483,7 +497,6 @@ margin: 0;
 
 
 
-
 .user-profile-image img {
     width:100%;
     object-fit: cover;
@@ -498,6 +511,15 @@ margin: 0;
     font-weight:1.5em;
 }
 
+.body {
+    height:100%;
+}
+
+#user-edit-photo-page .body {
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+}
 
 .icon {
     font-size: 1em;
@@ -519,4 +541,91 @@ margin: 0;
 }
 .settings li~li {
     border-top: 1px solid var(--color-neutral-lighter);
+}
+
+
+
+
+
+
+
+
+#list-page header {
+    display:flex;
+}
+.hotdog {
+    margin: 5px;
+    line-height:var(--header-height);
+    background-color: var(--color-neutral-lighter);
+    border-radius: var(--header-height);
+    width: 100%;
+    display: flex;
+}
+.hotdog input {
+    width:100%;
+    height:100%;
+    background-color: unset;
+    border: unset;
+    outline: unset;
+    padding: unset;
+    margin: unset;
+    vertical-align: middle;
+    font: inherit;
+    padding: 0 1em;
+}
+
+
+
+
+.thumbnail {
+    position:relative;
+    display:inline-block;
+    width:6em;
+    height:6em;
+    border-radius:0.6em;
+    border:0.25em solid white;
+    vertical-align:middle;
+    box-shadow:0 0.15em 0.35em 0.1em rgba(0,0,0,0.2);
+    margin:0.5em;
+    
+    background-position:center;
+    background-size:cover;
+  }
+/* This will hide the file input */
+.imagepicker input {
+    display:none;
+  }
+  .imagepicker {
+    cursor:pointer;
+    color:white;
+    background-color:rgba(0,0,0,0.3);
+  }
+  /* This will add the floating plus symbol to the imagepicker */
+  .imagepicker:before {
+    content:'+';
+    position:absolute;
+    font-size:3em;
+    vertical-align:middle;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  }
+  /* This will hide the plus symbol behind the background of the imagepicker if the class "picked" is added to the element */
+  .imagepicker.picked:before {
+    z-index:-1;
+  }
+
+
+
+
+
+
+.filter-bar {
+    display:flex;
+    padding-inline: 1em;
+    gap: 1em;
+    overflow:auto;
+}
+.filter-bar span {
+    font-weight:bold;
 }

@@ -1,6 +1,6 @@
-import { checkPlantAddForm, checkPlantDeleteForm, checkPlantEditForm, checkLocationAddForm, checkPasswordEditForm, checkSignupForm, checkUserEditForm } from "./forms.js";
-import { query } from "./functions.js";
-import { PlantAddPage, PlantEditPage, PlantProfilePage, ChooseLocationPage, ListPage, RecentPage, UserEditPage, UserProfilePage, PasswordEditPage } from "./routes.js";
+import { checkPlantAddForm, checkPlantDeleteForm, checkPlantEditForm, checkListFilter, checkListSearchForm, checkLocationAddForm, checkPasswordEditForm, checkSignupForm, checkUserEditForm, checkUserEditPhotoForm } from "./forms.js";
+import { checkUpload, query } from "./functions.js";
+import { PlantAddPage, PlantEditPage, PlantProfilePage, ChooseLocationPage, ListPage, RecentPage, UserEditPage, UserProfilePage, UserEditPhotoPage } from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
 
 // Document Ready
@@ -19,6 +19,7 @@ $(() => {
 
             case "user-profile-page": UserProfilePage(); break;
             case "user-edit-page": UserEditPage(); break;
+            case "user-edit-photo-page": UserEditPhotoPage(); break;
 
             case "plant-profile-page": PlantProfilePage(); break;
             case "plant-add-page": PlantAddPage(); break;
@@ -29,10 +30,10 @@ $(() => {
         }
     })
 
-    
     // EVENT DELEGATION
     .on("submit", "#signin-form", function(e) {
         e.preventDefault();
+        console.log("HELP")
         checkSigninForm();
     })
     .on("submit", "#signup-form", function(e) {
@@ -47,6 +48,36 @@ $(() => {
     .on("submit", "#plant-edit-form", function(e) {
         e.preventDefault();
         checkPlantEditForm();
+    })
+    .on("submit", "#list-search-form", function(e) {
+        e.preventDefault();
+        let search = $(this).find("input").val();
+        checkListSearchForm(search);
+    })
+
+
+
+
+
+
+    .on("change", ".imagepicker input", function(e) {
+        checkUpload(this.files[0])
+        .then((d) => {
+            console.log(d);
+            let filename = `uploads/${d.result}`;
+            $(this).parent().prev().val(filename);
+            $(this).parent().css({
+                "background-image": `url('${filename}')`
+            }).addClass("picked");
+        })
+    })
+
+
+
+    .on("click", "[data-filter]", function(e){
+        let {filter,value} = $(this).data();
+        if (value!=="") checkListFilter(filter,value);
+        else ListPage();
     })
 
 
@@ -81,6 +112,9 @@ $(() => {
 
     .on("click", ".js-submit-user-edit-form", function(e) {
         checkUserEditForm();
+    })
+    .on("click", ".js-submit-user-edit-photo-form", function(e) {
+        checkUserEditPhotoForm();
     })
     .on("click", ".js-submit-password-edit-form", function(e) {
         checkPasswordEditForm();

@@ -39,6 +39,21 @@ function makeQuery($conn,$prep,$params,$makeResults=true) {
     }
 }
 
+
+function makeUpload($file, $folder) {
+    $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+    if (@move_uploaded_file(
+        $_FILES[$file]['tmp_name'],
+        $folder.$filename
+    )) return ["result"=>$filename];
+    else return [
+        "error"=>"File Upload Failed",
+        "filename"=>$filename
+    ];
+}
+
+
 function makeStatement($data) {
     $conn = makeConn();
     $type = @$data->type;
@@ -97,6 +112,21 @@ function makeStatement($data) {
                 ", $params);
 
 
+case "search_plants":
+    return makeQuery($conn, "SELECT *
+    FROM `track_202290_plants`
+    WHERE 
+        `name` LIKE ? AND
+        `user_id` = ?
+    ", $params);
+
+case "filter_plants":
+    return makeQuery($conn, "SELECT *
+    FROM `track_202290_plants`
+    WHERE 
+        `$params[0]` = ? AND
+        `user_id` = ?
+    ", [$params[1],$params[2]]);
 
 
 
@@ -235,7 +265,21 @@ function makeStatement($data) {
 
 
             
-        /* DELETE Statement */
+        /* UPLOAD */
+        case "update_user_photo":
+            $result = makeQuery($conn, "UPDATE
+            `track_202290_users`
+            SET `img` = ?
+            WHERE `id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+        
+        
+        
+        
+            /* DELETE Statement */
 
 
         case "delete_plant":
@@ -255,6 +299,9 @@ function makeStatement($data) {
 
             if (isset($result['error'])) return $result;
             return ["result"=>"Success"];
+
+
+
         case "check_signin":
             return makeQuery($conn, "SELECT `id` FROM `track_202290_users` WHERE `username`=? AND `password` = md5(?)", $params);
 
@@ -262,6 +309,11 @@ function makeStatement($data) {
         default:
             return ["error"=>"No Matched Type"];
     }
+}
+
+if (!empty($_FILES)) {
+    $result = makeUpload("image","../uploads/");
+    die(json_encode($result));
 }
 
 $data = json_decode(file_get_Contents("php://input"));

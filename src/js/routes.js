@@ -1,6 +1,6 @@
 import { query } from "./functions.js"
 import { makeMap, makeMarkers } from "./maps.js";
-import { makePlantList, makePlantMapDescription, makePlantProfileDescription, makeEditPlantForm, makeEditUserForm, makeUserProfilePage } from "./parts.js";
+import { makePlantList, makePlantMapDescription, makePlantProfileDescription, makeEditPlantForm, makeEditUserForm, makeUserProfilePage, makeFilterList } from "./parts.js";
 
 
 export const RecentPage = async() => {
@@ -53,6 +53,7 @@ export const ListPage = async() => {
     console.log(plants)
 
     $("#list-page .plantlist").html(makePlantList(plants))
+    $(".filter-bar").html(makeFilterList(plants))
 }
 
 export const UserProfilePage = async() => {
@@ -95,7 +96,11 @@ export const ChooseLocationPage = async() => {
         console.log(e)
         $("#location-lat").val(e.latLng.lat());
         $("#location-lng").val(e.latLng.lng());
-        makeMarkers(map_el,[e.latLng]);
+        makeMarkers(map_el,[{
+            lat:e.latLng.lat(),
+            lng:e.latLng.lng(),
+            icon:'images/icons/marker.svg'
+        }]);
     })
 }
 
@@ -110,6 +115,17 @@ export const UserEditPage = async() => {
     let [user] = users;
 
     $("#user-edit-page .body").html(makeEditUserForm(user));
+}
+export const UserEditPhotoPage = async() => {
+    let {result:users} = await query({
+        type:"user_by_id",
+        params:[sessionStorage.userId]
+    });
+    let [user] = users;
+
+    $("#user-edit-photo-page .body").css({
+        "background-image": `url('${user.img}')`
+    });
 }
 
 

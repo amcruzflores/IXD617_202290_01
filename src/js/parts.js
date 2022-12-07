@@ -2,7 +2,7 @@ import { templater } from "./functions.js";
 
 
 export const makePlantList = templater(({id,name,type,breed,img})=>`
-<a class="plantlist-item animal-jump" href="#plant-profile-page" data-id="${id}">
+<a class="plantlist-item plant-jump" href="#plant-profile-page" data-id="${id}">
     <div class="plantlist-image"><img src="${img}"></div>
     <div class="plantlist-body">
         <div class="plantlist-name">${name}</div>
@@ -14,7 +14,7 @@ export const makePlantList = templater(({id,name,type,breed,img})=>`
 
 export const makeUserProfilePage = ({name,email,username,img})=>`
 <div>
-    <div class="user-profile-image"><img src="${img}"></div>
+    <div class="user-profile-image"><a href="#user-edit-photo-page"><img src="${img}"></a></div>
     <div class="user-profile-body">
         <div class="user-profile-name">${name}</div>
         <div class="user-profile-breed">@${username}</div>
@@ -80,6 +80,12 @@ const FormControlTextarea = ({namespace,name,displayname,placeholder,value}) => 
 
 export const makeEditPlantForm = ({plant,namespace}) => {
     return `
+    <div class="form-control">
+        <input type="hidden" id="${namespace}-photo-image" value="${plant.img??""}">
+        <label class="imagepicker replace thumbnail ${plant.img?"picked":""}" style="background-image:url('${plant.img}')">
+            <input type="file" id="${namespace}-photo-input" data-role="none" class="hidden">
+        </label>
+    </div>
     ${FormControlInput({
         namespace,
         name: "name",
@@ -112,4 +118,23 @@ export const makeEditPlantForm = ({plant,namespace}) => {
         value: plant.description
     })}
     `;
+}
+
+
+
+
+const filterList = (plants,type) => {
+    let arr = [...(new Set(plants.map(o=>o[type])))];
+    return templater(o=>o?`<span data-filter="${type}" data-value="${o}">${o}</span>`:'')(arr);
+}
+
+
+export const makeFilterList = (plants) => {
+    return `
+        <span data-filter="type" data-value="">All</span>
+        |
+        ${filterList(plants,'type')}
+        |
+        ${filterList(plants,'breed')}
+    `
 }
