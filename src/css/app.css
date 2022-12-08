@@ -15,7 +15,7 @@
     --color-main-medium: hsl(var(--color-main-hue), 38%, 27%);
     --color-main-dark: hsl(var(--color-main-hue), 100%, 27%);
 
-    --color-neutral-lighter: rgb(211, 255, 209);
+    --color-neutral-lighter: rgb(250, 255, 250);
     --color-neutral-light: rgb(144, 203, 141);
     --color-neutral-medium: rgb(112, 165, 109);
     --color-neutral-dark: rgb(86, 131, 84);
@@ -123,13 +123,6 @@ margin: 0;
 
 
 
-
-
-
-
-
-
-
 /* Basic Layout Tools */
 .display-flex { display:flex; }
 .display-inline-flex { display:inline-flex; }
@@ -148,10 +141,10 @@ margin: 0;
 
 .hidden { display: none; }
 
-
-
 .padded { padding:1em; }
+
 .full { height:100%; }
+
 
 
 
@@ -206,31 +199,12 @@ margin: 0;
     justify-content: center;
     align-items: center;
 }
-
 .hero-icon {
     margin-top: 25px;
     width:80vw;
     aspect-ratio: 1 / 1;
 }
 
-.plant-icon {
-    margin-top: 25px;
-    width:40vw;
-    aspect-ratio: 1 / 1;
-}
-
-.smallplant-icon {
-    margin-top: 25px;
-    width:35vw;
-    aspect-ratio: 1 / 1;
-}
-
-.modal-icon {
-    position:relative;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1 / 1;
-}
 
 .map {
     position:absolute;
@@ -242,6 +216,8 @@ margin: 0;
     background-position: center;
     background-size: cover;     */
 }
+
+
 
 /* FLOATER */
 .floater { position:absolute; }
@@ -294,7 +270,6 @@ margin: 0;
 .modal-back.transparent {
     background-color: transparent;
 }
-
 
 
 .modal-popup {
@@ -372,7 +347,7 @@ margin: 0;
 
 
 
-/* PLANTLIST */
+/* PLANT LIST */
 .plantlist {
     height: 100%;
     position:relative;
@@ -382,11 +357,9 @@ margin: 0;
 }
 
 
-
-
 [data-role="footer"] .icon {
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.4rem;
+    height: 1.4rem;
     vertical-align: middle;
 }
 [data-role="footer"] a {
@@ -398,11 +371,10 @@ margin: 0;
     line-height: 1.7rem;
 }
 .footer-label {
-    line-height: 1.3rem;
+    line-height: 1.4rem;
     font-size: 0.6rem;
     display: block;
 }
-
 
 
 
@@ -479,6 +451,10 @@ margin: 0;
 
 
 
+
+
+
+
 .plant-map-description {
     display:flex;
 }
@@ -497,6 +473,7 @@ margin: 0;
 
 
 
+
 .user-profile-image img {
     width:100%;
     object-fit: cover;
@@ -511,6 +488,7 @@ margin: 0;
     font-weight:1.5em;
 }
 
+
 .body {
     height:100%;
 }
@@ -520,6 +498,12 @@ margin: 0;
     background-position:center;
     background-repeat: no-repeat;
 }
+
+
+
+
+
+
 
 .icon {
     font-size: 1em;

@@ -23,7 +23,7 @@ export const RecentPage = async() => {
         // console.log(m)
         m.addListener("click",function(e){
             // console.log(e)
-            let plant = valid_plantss[i];
+            let plant = valid_plants[i];
             // console.log(plant)
 
             // Just Navigate

@@ -2,6 +2,7 @@ import { query } from "./functions.js";
 import { makePlantList } from "./parts.js";
 
 
+
 export const checkSignupForm = () => {
     let username = $("#signup-username").val();
     let email = $("#signup-email").val();
@@ -78,7 +79,6 @@ export const checkPasswordEditForm = () => {
         }
     })
 }
-
 export const checkUserEditPhotoForm = () => {
     let photo = $("#user-edit-photo-image").val();
     
@@ -99,11 +99,14 @@ export const checkUserEditPhotoForm = () => {
 
 
 
+
+
 export const checkPlantAddForm = () => {
     let name = $("#plant-add-name").val();
     let type = $("#plant-add-type").val();
     let breed = $("#plant-add-breed").val();
     let description = $("#plant-add-description").val();
+    let image = $("#plant-add-photo-image").val();
     
     query({
         type: 'insert_plant',
@@ -112,7 +115,8 @@ export const checkPlantAddForm = () => {
             name,
             type,
             breed,
-            description
+            description,
+            image
         ]
     }).then((data)=>{
         if (data.error) {
@@ -127,6 +131,7 @@ export const checkPlantEditForm = () => {
     let type = $("#plant-edit-type").val();
     let breed = $("#plant-edit-breed").val();
     let description = $("#plant-edit-description").val();
+    let image = $("#plant-edit-photo-image").val();
     
     query({
         type: 'update_plant',
@@ -135,6 +140,7 @@ export const checkPlantEditForm = () => {
             type,
             breed,
             description,
+            image,
             sessionStorage.plantId
         ]
     }).then((data)=>{
@@ -180,6 +186,7 @@ export const checkLocationAddForm = () => {
         }
     })
 }
+
 
 
 

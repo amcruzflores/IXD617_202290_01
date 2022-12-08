@@ -123,6 +123,7 @@ export const makeEditPlantForm = ({plant,namespace}) => {
 
 
 
+
 const filterList = (plants,type) => {
     let arr = [...(new Set(plants.map(o=>o[type])))];
     return templater(o=>o?`<span data-filter="${type}" data-value="${o}">${o}</span>`:'')(arr);
