@@ -106,7 +106,8 @@ export const checkPlantAddForm = () => {
     let type = $("#plant-add-type").val();
     let breed = $("#plant-add-breed").val();
     let description = $("#plant-add-description").val();
-    let image = $("#plant-add-photo-image").val();
+    //let img = $("#plant-add-photo-image").val();
+
     
     query({
         type: 'insert_plant',
@@ -115,8 +116,8 @@ export const checkPlantAddForm = () => {
             name,
             type,
             breed,
-            description,
-            image
+            description
+            //img
         ]
     }).then((data)=>{
         if (data.error) {
@@ -131,7 +132,7 @@ export const checkPlantEditForm = () => {
     let type = $("#plant-edit-type").val();
     let breed = $("#plant-edit-breed").val();
     let description = $("#plant-edit-description").val();
-    let image = $("#plant-edit-photo-image").val();
+    //let image = $("#plant-edit-photo-image").val();
     
     query({
         type: 'update_plant',
@@ -140,7 +141,7 @@ export const checkPlantEditForm = () => {
             type,
             breed,
             description,
-            image,
+            //image,
             sessionStorage.plantId
         ]
     }).then((data)=>{
@@ -152,6 +153,7 @@ export const checkPlantEditForm = () => {
     })
 }
 export const checkPlantDeleteForm = () => {
+    //console.log("delete plant")
     query({
         type:"delete_plant",
         params:[sessionStorage.plantId]
