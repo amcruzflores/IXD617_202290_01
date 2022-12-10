@@ -181,7 +181,7 @@ case "filter_plants":
                 ?,
                 ?,
                 ?,
-                'https://via.placeholder.com/400/?text=PLANT',
+                'https://annamarieflores.com/aau/ixd617/images/cactiSquare.png',
                 NOW()
             )
             ", $params, false);
@@ -208,7 +208,7 @@ case "filter_plants":
                 ?,
                 ?,
                 'https://via.placeholder.com/400/?text=PHOTO',
-                'https://via.placeholder.com/400/?text=ICON',
+                'https://annamarieflores.com/aau/ixd617/images/cactiSquare.png',
                 NOW()
             )
             ", $params, false);
